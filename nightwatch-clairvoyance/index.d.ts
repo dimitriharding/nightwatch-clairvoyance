@@ -7,6 +7,7 @@
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 // TypeScript Version: 2.3
 
+
 export interface ChromePerfLoggingPrefs {
     /**
      * Default: true. Whether or not to collect events from Network domain.
@@ -1032,8 +1033,21 @@ export interface NightwatchCustomCommands { }
 // tslint:disable-next-line
 export interface NightwatchCustomAssertions { }
 
+/**
+ * Nightwatch Dynamic type definition by clairvoyance 
+ */
+
+export interface LoginPage extends EnhancedPageObject {
+    enterUsername(text?: string, callback?: () => void): this;
+    enterPassword(text?: string, callback?: () => void): this;
+}
+
+export type UserDefineLoginPageObject = () => LoginPage;
+
 // tslint:disable-next-line
-export interface NightwatchCustomPageObjects { }
+export interface NightwatchCustomPageObjects { 
+    LoginPage?: UserDefineLoginPageObject;
+}
 
 export interface NightwatchBrowser extends NightwatchAPI, NightwatchCustomCommands {
 }
@@ -1145,8 +1159,20 @@ export interface EnhancedElementInstance<T> {
 
 export type EnhancedSectionInstance<Commands = {}, Elements = {}, Sections = {}> = EnhancedPageObject<Commands, Elements, Sections>;
 
+export type EnhancedCommandInstance<Commands = {}, Elements = {}, Sections = {}> = EnhancedPageObject<Commands, Elements, Sections>;
+
 export interface EnhancedPageObjectSections {
     [name: string]: EnhancedSectionInstance<any, any, any>;
+}
+
+export interface UserDefinedCommand {
+   
+}
+
+export interface UserDefinedPage extends EnhancedPageObject {
+    commands: Array<{
+        [name: string] : EnhancedCommandInstance
+    }>
 }
 
 /**
@@ -1165,6 +1191,10 @@ export type EnhancedPageObject<Commands = {}, Elements = {}, Sections extends En
         [name: string]: EnhancedElementInstance<EnhancedPageObject<Commands, Elements, Sections>>;
     };
 
+    commands: Array<{
+        [name: string] : EnhancedCommandInstance
+    }>
+
     section: Sections;
 
     /**
@@ -1178,7 +1208,7 @@ export type EnhancedPageObject<Commands = {}, Elements = {}, Sections extends En
      *  it performs a call to .url() with passing the value of `url` property on the page object.
      * Uses `url` protocol command.
      */
-    navigate(url?: string, callback?: () => void): EnhancedPageObject<Commands, Elements, Sections>;
+    navigate(url?: string, callback?: () => void): EnhancedPageObject<Commands, Elements, Sections> & LoginPage;
 };
 
 export interface Cookie {
