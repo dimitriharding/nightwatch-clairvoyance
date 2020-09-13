@@ -1,0 +1,18 @@
+{
+  "name": "nightwatch-clear",
+  "version": "1.0.0",
+  "description": "Concept project for Nightwatch page object autocompletion",
+  "main": "index.js",
+  "scripts": {
+    "test": "nightwatch"
+  },
+  "author": "Dimitri Harding <https://github.com/dimitriharding>",
+  "license": "ISC",
+  "dependencies": {
+    "chromedriver": "^85.0.1",
+    "nightwatch": "^1.4.2"
+  },
+  "devDependencies": {
+    "@types/nightwatch": "^1.3.0"
+  }
+}
