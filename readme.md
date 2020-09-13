@@ -1,6 +1,6 @@
 <h1 align="center">
 	<br>
-	<img width="400" src="media/nc-logo.svg" alt="NC">
+	<img width="400" src="media/logo.png" alt="NC">
 	<br>
 	<br>
 	<br>
