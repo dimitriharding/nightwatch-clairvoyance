@@ -1,0 +1,20 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "nightwatch.conf.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "nightwatch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chromedriver": "^85.0.1"
+  },
+  "dependencies": {
+    "nightwatch": "^1.4.2"
+  }
+}

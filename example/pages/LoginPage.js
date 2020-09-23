@@ -1,6 +1,3 @@
-/** @typedef {import("./../node_modules/@types/nightwatch").UserDefinedPage} UserDefinedPage */
-/** @typedef {import("./../node_modules/@types/nightwatch").NightwatchBrowser} NightwatchBrowser */
-
 const elements = {
   txtUsername: '#username',
   txtPassword: '#password',
@@ -8,16 +5,19 @@ const elements = {
   txtNotification: '#flash-messages'
 };
 
+/**
+  * Enters the username
+  * @type {import("../../types").NightwatchEnhancedPageObject} 
+  */
 const commands = {
   /**
    * Enters the username
    * @param {string} username 
-   * @type {} <- Needs to be the correct type so `this` will be the pageObject API
    */
   enterUsername(username) {
     return this
       .waitForElementVisible("@txtUsername")
-      .setValue("@txtUsername", username);
+      .setValue("@txtUsername", username)
   },
 
   /**
@@ -31,9 +31,9 @@ const commands = {
   }
 };
 
-/** @type {UserDefinedPage} */
 module.exports = {
   elements: elements,
   commands: [commands],
-  url: '/login'
+  url: '/login',
+  name: 'LoginPage'
 };
