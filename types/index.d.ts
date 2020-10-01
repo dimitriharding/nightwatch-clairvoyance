@@ -54,7 +54,7 @@ export interface NightwatchAPI extends SharedCommands, WebDriverProtocol, Nightw
 export type EnhancedPageObjectCommand = ElementCommands;
 
 
-export interface CustomPageObjectCommand extends  EnhancedPageObjectCommands<NightwatchEnhancedPageObject> {};
+export interface CustomPageObjectCommand extends  EnhancedPageObjectCommands<NightwatchEnhancedPageObject> {}
 
 export interface EnhancedPageObjectCommands<T> {
 

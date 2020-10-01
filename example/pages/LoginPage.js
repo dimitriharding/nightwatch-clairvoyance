@@ -5,10 +5,7 @@ const elements = {
   txtNotification: '#flash-messages'
 };
 
-/**
-  * Enters the username
-  * @type {import("../../types").NightwatchEnhancedPageObject} 
-  */
+
 const commands = {
   /**
    * Enters the username
@@ -22,7 +19,7 @@ const commands = {
 
   /**
    * Enters the password
-   * @param {string} username 
+   * @param {string} password 
    */
   enterPassword(password) {
     return this

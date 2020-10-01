@@ -30,30 +30,30 @@ module.exports = {
 };
 
 
-describe("Login Tests", () => {
-  it("Successful login", (client) => {
-    const loginPage = client.page.LoginPage();
-    const page  = client.page.page();
+// describe("Login Tests", () => {
+//   it("Successful login", (client) => {
+//     const loginPage = client.page.LoginPage();
+//     const page  = client.page.page();
 
-    loginPage
-      .navigate()
-      .enterUsername('tomsmith')
-      .enterPassword('SuperSecretPassword!')
-      .click('@btnSubmit')
-      .verify.containsText('@txtNotification', 'You logged into a secure area!');
-  });
+//     loginPage
+//       .navigate()
+//       .enterUsername('tomsmith')
+//       .enterPassword('SuperSecretPassword!')
+//       .click('@btnSubmit')
+//       .verify.containsText('@txtNotification', 'You logged into a secure area!');
+//   });
 
-  it("[regression] Wrong Password", (client) => {
-    const loginPage = client.page.LoginPage();
+//   it("[regression] Wrong Password", (client) => {
+//     const loginPage = client.page.LoginPage();
 
-    loginPage
-      .navigate()
-      .enterUsername('tomsmith')
-      .enterPassword('SuperSecretPassword')
-      .click('@btnSubmit')
-      .verify.containsText('@txtNotification', 'Your password is invalid!');
-  });
-});
+//     loginPage
+//       .navigate()
+//       .enterUsername('tomsmith')
+//       .enterPassword('SuperSecretPassword')
+//       .click('@btnSubmit')
+//       .verify.containsText('@txtNotification', 'Your password is invalid!');
+//   });
+// });
 
 
 
